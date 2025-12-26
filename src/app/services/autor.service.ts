@@ -15,6 +15,7 @@ export class AutorService {
 
   findAll(): Observable<Autor[]> {
     return this.http.get<Autor[]>(this.baseUrl);
+    
   }
 
   findById(id: number): Observable<Autor> {

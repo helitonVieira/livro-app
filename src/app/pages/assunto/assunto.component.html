@@ -1,0 +1,121 @@
+<div class="container py-4">
+
+  <!-- TÍTULO -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h3 class="fw-bold text-primary">
+      <i class="bi bi-person-lines-fill me-2"></i>
+      Cadastro de Assuntoes
+    </h3>
+  </div>
+
+  <!-- FORMULÁRIO -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <strong>
+        <i class="bi bi-pencil-square me-1"></i>
+        @if (editando) { Editar Assunto } @else { Novo Assunto }
+      </strong>
+    </div>
+
+    <div class="card-body">
+      <form (ngSubmit)="salvar()" class="row g-3">
+
+        <div class="col-md-8">
+          <label class="form-label fw-semibold">Descrição do Assunto</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Digite o descricao"
+            [(ngModel)]="assuntoForm.descricao"
+            name="descricao"
+            required
+          />
+        </div>
+
+        <div class="col-md-4 d-flex align-items-end gap-2">
+          <button type="submit" class="btn btn-success w-100">
+            <i class="bi bi-save me-1"></i>
+            @if (editando) { Atualizar } @else { Salvar }
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-outline-secondary w-100"
+            (click)="resetForm()"
+          >
+            <i class="bi bi-x-circle"></i>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- TABELA -->
+  <div class="card shadow-sm">
+    <div class="card-header bg-dark text-white">
+      <strong>
+        <i class="bi bi-table me-1"></i>
+        Assuntos Cadastrados
+      </strong>
+    </div>
+
+    <div class="table-responsive">
+      <table class="table table-hover table-striped align-middle mb-0">
+        <thead class="table-light">
+          <tr>
+            <th style="width: 80px">ID</th>
+            <th>Descrição</th>
+            <th class="text-center" style="width: 160px">Ações</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          @for (assunto of assuntoes(); track $index) {
+            <tr>
+              <td>
+                <span class="badge bg-secondary">
+                  {{ assunto.id }}
+                </span>
+              </td>
+
+              <td class="fw-semibold">
+                {{ assunto.descricao }}
+              </td>
+
+              <td class="text-center">
+                <div class="btn-group btn-group-sm">
+                  <button
+                    class="btn btn-outline-warning"
+                    (click)="editar(assunto)"
+                    title="Editar"
+                  >
+                    <i class="bi bi-pencil"></i>
+                  </button>
+
+                  <button
+                    class="btn btn-outline-danger"
+                    (click)="excluir(assunto)"
+                    title="Excluir"
+                  >
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          }
+
+          @if (assuntoes().length === 0) {
+            <tr>
+              <td colspan="3" class="text-center text-muted py-4">
+                <i class="bi bi-inbox fs-3 d-block"></i>
+                Nenhum assunto cadastrado
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
