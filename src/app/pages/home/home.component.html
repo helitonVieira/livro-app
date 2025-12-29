@@ -1,0 +1,115 @@
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" routerLink="/">
+      <i class="bi bi-book-half me-2"></i>
+      Livraria
+    </a>
+
+    <div class="collapse navbar-collapse show">
+      <ul class="navbar-nav ms-auto gap-2">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/livro">
+            <i class="bi bi-book"></i> Livros
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/autor">
+            <i class="bi bi-person"></i> Autores
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/assunto">
+            <i class="bi bi-tags"></i> Assuntos
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/relatorio-autores">
+            <i class="bi bi-file-earmark-text"></i> Relatório
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTEÚDO -->
+<div class="container py-5">
+
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-primary">
+      Bem-vindo à Livraria 📚
+    </h2>
+    <p class="text-muted">
+      Gerencie livros, autores e assuntos de forma simples e organizada
+    </p>
+  </div>
+
+  <div class="row g-4">
+
+    <!-- LIVROS -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-book fs-1 text-primary"></i>
+          <h5 class="mt-3 fw-bold">Livros</h5>
+          <p class="text-muted">
+            Cadastro e gerenciamento de livros
+          </p>
+          <a routerLink="/livro" class="btn btn-primary w-100">
+            Acessar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- AUTORES -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-person-lines-fill fs-1 text-success"></i>
+          <h5 class="mt-3 fw-bold">Autores</h5>
+          <p class="text-muted">
+            Controle completo de autores
+          </p>
+          <a routerLink="/autor" class="btn btn-success w-100">
+            Acessar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ASSUNTOS -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-tags fs-1 text-warning"></i>
+          <h5 class="mt-3 fw-bold">Assuntos</h5>
+          <p class="text-muted">
+            Organização por assuntos
+          </p>
+          <a routerLink="/assunto" class="btn btn-warning w-100">
+            Acessar
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- RELATÓRIO -->
+    <div class="col-md-4">
+      <div class="card shadow-sm h-100 text-center">
+        <div class="card-body">
+          <i class="bi bi-file-earmark-text fs-1 text-info"></i>
+          <h5 class="mt-3 fw-bold">Relatório de Autores</h5>
+          <p class="text-muted">
+            Visualizar relatório de autores cadastrados
+          </p>
+          <a routerLink="/relatorio-autores" class="btn btn-info w-100">
+            Acessar
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

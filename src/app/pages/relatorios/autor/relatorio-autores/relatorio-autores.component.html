@@ -1,0 +1,53 @@
+<div class="container py-4">
+
+  <button class="btn btn-outline-primary" (click)="voltar()">
+  <i class="bi bi-arrow-left"></i> Voltar
+</button>   
+
+  <h3 class="fw-bold text-primary mb-4">
+    <i class="bi bi-file-earmark-pdf me-2"></i>
+    Relatório de Autores
+  </h3>
+
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      Filtros
+    </div>
+
+    <div class="card-body">
+      @if (erro) {
+        <div class="alert alert-danger">{{ erro }}</div>
+      }
+
+      <div class="row g-3 align-items-end">
+
+        <div class="col-md-4">
+          <label class="form-label fw-semibold">Código do Autor</label>
+          <input
+            type="number"
+            class="form-control"
+            [(ngModel)]="codau"
+            placeholder="Ex: 1">
+        </div>
+
+        <div class="col-md-8 d-flex gap-2">
+          <button
+            class="btn btn-danger"
+            (click)="gerarRelatorio()"
+            [disabled]="carregando">
+            <i class="bi bi-file-pdf me-1"></i>
+            Gerar PDF
+          </button>
+
+          <button
+            class="btn btn-outline-secondary"
+            (click)="limparFiltro()">
+            Limpar
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

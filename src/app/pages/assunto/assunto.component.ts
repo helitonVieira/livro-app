@@ -1,5 +1,5 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, Location } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { Assunto } from '../../models/assunto.model';
@@ -18,7 +18,9 @@ export class AssuntoComponent implements OnInit {
   assuntoForm: Assunto = { descricao: '' };
   editando = false;
 
-  constructor(private assuntoService: AssuntoService) {}
+  constructor(private assuntoService: AssuntoService,
+    private location: Location
+  ) {}
 
   ngOnInit(): void {
     this.loadAssuntoes();
@@ -67,4 +69,9 @@ export class AssuntoComponent implements OnInit {
     this.assuntoForm = { descricao: '' };
     this.editando = false;
   }
+
+  voltar() {
+    this.location.back();
+  }  
+
 }

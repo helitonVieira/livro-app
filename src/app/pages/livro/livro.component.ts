@@ -10,6 +10,7 @@ import { Livro } from '../../models/livro.model';
 import { LivroDTO } from '../../models/livro.dto.model';
 import { Autor } from '../../models/autor.model';
 import { Assunto } from '../../models/assunto.model';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-livro',
@@ -35,7 +36,8 @@ export class LivroComponent implements OnInit {
   constructor(
     private livroService: LivroService,
     private autorService: AutorService,
-    private assuntoService: AssuntoService
+    private assuntoService: AssuntoService,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
@@ -160,4 +162,9 @@ export class LivroComponent implements OnInit {
     this.erro = '';
     return true;
   }
+
+  voltar() {
+    this.location.back();
+  }
+  
 }
