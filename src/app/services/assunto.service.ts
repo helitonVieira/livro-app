@@ -9,7 +9,7 @@ import { Assunto } from '../models/assunto.model';
 })
 export class AssuntoService {
 
-  private baseUrl = 'http://localhost:8080/assunto';
+  private baseUrl = 'http://localhost:8080/api/v1/assuntos';
 
   constructor(private http: HttpClient) {}
 

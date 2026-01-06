@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class LivroService {
 
-  private api = 'http://localhost:8080/livros';
+  private api = 'http://localhost:8080/api/v1/livros';
 
   constructor(private http: HttpClient) {}
 

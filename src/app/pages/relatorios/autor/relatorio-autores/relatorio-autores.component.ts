@@ -19,7 +19,7 @@ export class RelatorioAutoresComponent {
     private location: Location
   ) {}
 
-  gerarRelatorio2(): void {
+  /*gerarRelatorio2(): void {
     this.carregando = true;
     this.erro = '';
 
@@ -36,7 +36,7 @@ export class RelatorioAutoresComponent {
           this.carregando = false;
         }
       });
-  }
+  }*/
 
   gerarRelatorio(): void {
     this.carregando = true;
@@ -54,8 +54,7 @@ export class RelatorioAutoresComponent {
   }
 
   const fileURL = URL.createObjectURL(blob);
-
-  // FORMA MAIS CONFIÁVEL
+  
   const a = document.createElement('a');
   a.href = fileURL;
   a.target = '_blank';

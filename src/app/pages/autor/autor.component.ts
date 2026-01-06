@@ -26,11 +26,8 @@ export class AutorComponent implements OnInit {
   }
 
   loadAutores(): void {
-    this.autorService.findAll().subscribe(data => {
-     console.log('ANTES set:', this.autores());
-    console.log('CHEGOU:', data);
-    this.autores.set(data);
-    console.log('DEPOIS set:', this.autores());
+    this.autorService.findAll().subscribe(data => {      
+    this.autores.set(data);    
     });
   }
 
